@@ -138,10 +138,10 @@ echo gettype($y);
 ```
 
 > double, -9223372036854775808, 1, double
-  1 - Pois está sendo adicionado +1 no maior inteiro suportado
-  2 - para não causar estouro de buffer com um bit extra flutuando na RAM
-  3 - Porque ele verificou como verdadeiro que o número em questão é um float
-  4 - float e double são semelhantes porém o PHP interpreta como double pois o double consegue armazenar mais números à direita do ponto
+> 1 - Pois está sendo adicionado +1 no maior inteiro suportado
+> 2 - para não causar estouro de buffer com um bit extra flutuando na RAM
+> 3 - Porque ele verificou como verdadeiro que o número em questão é um float
+> 4 - float e double são semelhantes porém o PHP interpreta como double pois o double consegue armazenar mais números à direita do ponto
 
 ### 12. Qual será o valor de `$x` após a execução do código abaixo? Por quê?
 
