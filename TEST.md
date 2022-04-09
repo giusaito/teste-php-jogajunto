@@ -83,9 +83,9 @@ var_dump('0123' === 123);
 ```
 
 > false, true, false. 
-  1 - var_dump(0123 == 123); false porque 0123 é um octal e o 123 octal é igual a 83 decimal e 123 é decimal
-  2 - var_dump('0123' == 123); true porque a string '0123' será automaticamente forçada a ser interpretada como um número ao ser comparada com um inteiro e o 0 é ignorado
-  3 - var_dump('0123' === 123); false porque === é um operador de comparação idêntica então verifica-se se são iguais e do mesmo tipo.
+  1. var_dump(0123 == 123); false porque 0123 é um octal e o 123 octal é igual a 83 decimal e 123 é decimal
+  2. var_dump('0123' == 123); true porque a string '0123' será automaticamente forçada a ser interpretada como um número ao ser comparada com um inteiro e o 0 é ignorado
+  3. var_dump('0123' === 123); false porque === é um operador de comparação idêntica então verifica-se se são iguais e do mesmo tipo.
 
 ### 7. Qual será a saída do código abaixo? Por quê?
 
@@ -100,9 +100,9 @@ var_dump($c == $a);
 ```
 
 > true, true, false
-  1 - var_dump($a == $b); true pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais onde $a é uma string 0 (vazio é igual a 0) e $b um int 0 sendo os valores iguais
-  2 - var_dump($b == $c); true pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais onde "0a" o a é ignorado na variável $c 
-  3 - var_dump($c == $a); false pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais e como são duas strings os valores de $c e de $a são claramente diferentes.
+  1. var_dump($a == $b); true pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais onde $a é uma string 0 (vazio é igual a 0) e $b um int 0 sendo os valores iguais
+  2. var_dump($b == $c); true pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais onde "0a" o a é ignorado na variável $c 
+  3. var_dump($c == $a); false pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais e como são duas strings os valores de $c e de $a são claramente diferentes.
 
 ### 8. Qual será o valor de `$x` após a execução do código abaixo? Por quê?
 
@@ -138,10 +138,10 @@ echo gettype($y);
 ```
 
 > double, -9223372036854775808, 1, double
-> 1 - Pois está sendo adicionado +1 no maior inteiro suportado
-> 2 - para não causar estouro de buffer com um bit extra flutuando na RAM
-> 3 - Porque ele verificou como verdadeiro que o número em questão é um float
-> 4 - float e double são semelhantes porém o PHP interpreta como double pois o double consegue armazenar mais números à direita do ponto
+  1.  Pois está sendo adicionado +1 no maior inteiro suportado
+  2. para não causar estouro de buffer com um bit extra flutuando na RAM
+  3. Porque ele verificou como verdadeiro que o número em questão é um float
+  4. float e double são semelhantes porém o PHP interpreta como double pois o double consegue armazenar mais números à direita do ponto
 
 ### 12. Qual será o valor de `$x` após a execução do código abaixo? Por quê?
 
