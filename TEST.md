@@ -33,7 +33,7 @@ var_dump($b);
 
 ### 1. Qual a diferença entre `echo` e `print`?
 
-> (Sua resposta aqui.)
+> print é uma função e o echo uma declaração, sendo que o print sempre retorna 1 porém o echo não retorna valor.
 
 ### 2. Qual é a saída do código abaixo? Por quê?
 
@@ -42,7 +42,7 @@ $x = true and false;
 var_dump($x);
 ```
 
-> (Sua resposta aqui.)
+> Retorna um booleano true, porque o and tem a precedência de um operador menor que o igual. Como por exemplo em uma conta simples: 2 + 2 * 2 e (2 + 2) * 2. O primeiro retorna 6 e o segundo 8
 
 ### 3. Qual é a saída do código abaixo? Por quê?
 
@@ -58,7 +58,7 @@ $a = array(
 var_dump($a);
 ```
 
-> (Sua resposta aqui.)
+> 11, 7, 1, 5. Porque está definido como pós incremento e pós decremento. Portanto primeiro retorna-se o valor original para então incrementar/decrementar $x em um.
 
 ### 4. Quais serão os valores de `$a` e `$b` após a execução do código abaixo? Por quê?
 
@@ -68,11 +68,11 @@ $b = &$a;
 $b = "2$b";
 ```
 
-> (Sua resposta aqui.)
+> Ambos serão 21. Primeiro estamos concatenando duas strings 2 e 1 e segundo pois $b = &$a; está utilizando de atribuição por referência que indica que a variável $a é uma referência de $b.
 
 ### 5. O que são Traits e para que servem? 
 
-> (Sua resposta aqui.)
+> Traits são partes de código que servem para reutilização por diferentes classes.
 
 ### 6. Qual será a saída do código abaixo? Por quê?
 
@@ -82,7 +82,10 @@ var_dump('0123' == 123);
 var_dump('0123' === 123);
 ```
 
-> (Sua resposta aqui.)
+> false, true, false. 
+  1 - var_dump(0123 == 123); false porque 0123 é um octal e o 123 octal é igual a 83 decimal e 123 é decimal
+  2 - var_dump('0123' == 123); true porque a string '0123' será automaticamente forçada a ser interpretada como um número ao ser comparada com um inteiro e o 0 é ignorado
+  3 - var_dump('0123' === 123); false porque === é um operador de comparação idêntica então verifica-se se são iguais e do mesmo tipo.
 
 ### 7. Qual será a saída do código abaixo? Por quê?
 
@@ -96,7 +99,10 @@ var_dump($b == $c);
 var_dump($c == $a);
 ```
 
-> (Sua resposta aqui.)
+> true, true, false
+  1 - var_dump($a == $b); true pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais onde $a é uma string 0 (vazio é igual a 0) e $b um int 0 sendo os valores iguais
+  2 - var_dump($b == $c); true pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais onde "0a" o a é ignorado na variável $c 
+  3 - var_dump($c == $a); false pois como foi usado o operador de comparação igual (==) ele verifica somente os valores iguais e como são duas strings os valores de $c e de $a são claramente diferentes.
 
 ### 8. Qual será o valor de `$x` após a execução do código abaixo? Por quê?
 
@@ -104,11 +110,11 @@ var_dump($c == $a);
 $x = 3 + "15%";
 ```
 
-> (Sua resposta aqui.)
+> 18, pois como nas questões anteriores o php tem suporte para conversão automática de tipo no contexto que está sendo usada, como é o caso dessa operação aritmética, então como "15%" começa com um número (15) o restante é ignorado
 
 ### 9. Qual a diferença entre `require_once()` e `include_once()`?
 
-> (Sua resposta aqui.)
+> são quase idênticas, porém em caso de algum erro o include_once ainda mostrará a saída e o require_once surgirá um fatal error e a saída não é exibida
 
 ### 10. Qual será o valor de `$name` após a execução do código abaixo? Por quê?
 
@@ -117,7 +123,7 @@ $name = 'John ';
 $name[10] = 'Doe';
 ```
 
-> (Sua resposta aqui.)
+> Porque uma string é um array de caracteres, ele adicona somente o D pois está sendo carregado apenas uma ocorrência [10], então só há espaço para o primeiro caractere do 'Doe'
 
 ### 11. Qual será a saída do código abaixo? Por quê?
 
@@ -131,7 +137,11 @@ echo is_float($y);
 echo gettype($y);
 ```
 
-> (Sua resposta aqui.)
+> double, -9223372036854775808, 1, double
+  1 - Pois está sendo adicionado +1 no maior inteiro suportado
+  2 - para não causar estouro de buffer com um bit extra flutuando na RAM
+  3 - Porque ele verificou como verdadeiro que o número em questão é um float
+  4 - float e double são semelhantes porém o PHP interpreta como double pois o double consegue armazenar mais números à direita do ponto
 
 ### 12. Qual será o valor de `$x` após a execução do código abaixo? Por quê?
 
@@ -139,8 +149,8 @@ echo gettype($y);
 $x = "one" + 1;
 ```
 
-> (Sua resposta aqui.)
+> 1 causando um erro de valor não numérico "one". Isso acontece pois o PHP entende que está sendo efetuada uma operação aritmética, e não é possível fazê-la com uma string (somente se essa string fosse números para o php fazer a conversão automática)
 
 ### 13. Qual a diferença entre `isset()` e `empty()`?
 
-> (Sua resposta aqui.)
+> isset() verifica se a variável existe e empty() verifica se contém algum valor na variável
